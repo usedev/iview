@@ -683,7 +683,7 @@
             query (query) {
                 this.$emit('on-query-change', query);
                 const {remoteMethod, lastRemoteQuery} = this;
-                const hasValidQuery = query !== '' && (query !== lastRemoteQuery || !lastRemoteQuery);
+                const hasValidQuery = (query !== lastRemoteQuery || !lastRemoteQuery);
                 const shouldCallRemoteMethod = remoteMethod && hasValidQuery && !this.preventRemoteCall;
                 this.preventRemoteCall = false; // remove the flag
 
